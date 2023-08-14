@@ -18,11 +18,14 @@ def gsutil_getsize(url=''):
 
 def attempt_download(file, repo='WongKinYiu/yolov7'):
     # Attempt file download if does not exist
-    file = Path(str(file).strip().replace("'", '').lower())
+    file = Path(str(file).strip().replace("'", ''))
 
     if not file.exists():
         try:
-            response = requests.get(f'https://api.github.com/repos/{repo}/releases/latest').json()  # github api
+            response = requests.get(f'https://api.github.com/repos/WongKinYiu/yolov7/releases/latest').json()
+            if response['message'] == 'Not Found':
+                response = requests.get(f'https://api.github.com/repos/WongKinYiu/yolov7/releases').json()
+                response = requests.get(response[0]["url"]).json() 
             assets = [x['name'] for x in response['assets']]  # release assets
             tag = response['tag_name']  # i.e. 'v1.0'
         except:  # fallback plan
