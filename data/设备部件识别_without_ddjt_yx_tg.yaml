@@ -1,8 +1,0 @@
-
-train: ./data/缺陷识别yolov7/设备部件识别_without_ddjt_yx_tg/train/images
-val: ./data/缺陷识别yolov7/设备部件识别_without_ddjt_yx_tg/test/images
-test: 
-
-nc: 21
-#Classes
-names: ['cysb_qyb', 'cysb_sgz', 'SF6ylb', 'drq', 'ecjxh', 'drqgd','cysb_lqq', 'cysb_qtjdq', 'xldlb', 'sly_dmyw', 'ywj', 'ywb', 'jdyxx', 'fhz_f', 'bmwh', 'xmbhzc', 'pzq', 'jyh', 'ywc', 'cysb_cyg', 'bjzc']
